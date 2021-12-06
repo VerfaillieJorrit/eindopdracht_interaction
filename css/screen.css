@@ -1,8 +1,7 @@
 html {
   background-color: #e3edf593;
 }
-.c-body {
-}
+
 .c-body--title {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -20,7 +19,6 @@ html {
   border-color: transparent;
   height: 40px;
   width: 70%;
-  
 }
 .c-button {
   border-radius: 20px;
@@ -30,21 +28,19 @@ html {
   width: 26%;
   height: 40px;
 }
-.c-content{
+.c-content {
   margin-left: 40px;
   margin-top: 30px;
   margin-right: 40px;
   display: block;
-  margin-bottom:0px;
-  
+  margin-bottom: 0px;
 }
 
-
-.c-label--name{
+.c-label--name {
   margin: 0 0 0 0;
-  float:left;
+  float: left;
 }
-.c-label--value{
+.c-label--value {
   margin: 0 0 0 0;
-  text-align:right;
+  text-align: right;
 }
