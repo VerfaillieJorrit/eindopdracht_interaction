@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="css/screen.css" />
     <script src="script/datahandler.js"></script>
     <script src="script/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body style="margin: 0px">
     <div class="c-body">
       <h1 class="c-body--title">Stock Price</h1>
       <div class="c-body--content">
         <div class="c-input">
-          <input class="c-input--field" type="text" />
-          <button class="c-button">sumbit</button>
+          <input class="c-input--field js-input" type="text" />
+          <button class="c-button js-sumbit"  >sumbit</button>
+        </div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <div class="c-content js-content">
         </div>
         <div class="c-card"></div>
       </div>
