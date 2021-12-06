@@ -1,7 +1,11 @@
 html {
   background-color: #e3edf593;
 }
-
+.c-chart {
+  width: 100%;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 .c-body--title {
   margin-top: 20px;
   margin-bottom: 30px;

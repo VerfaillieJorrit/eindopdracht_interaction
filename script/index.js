@@ -1,5 +1,30 @@
+var myChart = '';
+
 const init = function () {
   console.log('ready');
+  const ctx = document.getElementById('myChart').getContext('2d');
+    myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: '',
+          datasets: [{
+              label: 'value',
+              data: '',
+              
+              borderColor: [
+                  'rgba(0, 146, 255, 0.88)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
   //   get_data(stock_name);
   const button = document.querySelector('.c-button');
   
@@ -9,6 +34,7 @@ const init = function () {
 const click = function () {
 const stock_name = document.querySelector('.js-input').value
 get_data(stock_name)
+get_history(stock_name)
 }
 
 
@@ -49,41 +75,7 @@ const show_data = function (jsonObject) {
     <p class="c-label--value">${marketCap}</p>  
     `
     html.innerHTML = htmlcode
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-              label: 'value',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
-      }
-  });
+    
   }
   
 };
@@ -94,7 +86,29 @@ const show_data = function (jsonObject) {
 
 
 
+const show_history = function(jsonObject) {
+  
+  
+  const timestamps =[]
+  const stock_name = document.querySelector('.js-input').value
+  for  (time of jsonObject[stock_name].timestamp){
+    let unix_timestamp = time
 
+var date = new Date(unix_timestamp * 1000);
+
+var formattedTime = date.toLocaleString();
+
+timestamps.push(formattedTime.substring(0,10))
+    
+  }
+  
+  
+  
+  
+  myChart.data.datasets[0].data = jsonObject[stock_name].close
+  myChart.data.labels = timestamps
+  myChart.update();
+}
 
 
 
@@ -115,6 +129,9 @@ const get_data = function (stock_name) {
   handleData(`https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=${stock_name}`, show_data);
 };
 
+const get_history = function (stock_name) {
+ handleData(`https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=${stock_name}`,show_history);
+};
 
 
 
