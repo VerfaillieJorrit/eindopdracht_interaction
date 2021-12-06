@@ -1,0 +1,30 @@
+html {
+  background-color: #e3edf5;
+}
+.c-body {
+}
+.c-body--title {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: black;
+}
+.c-input {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.c-input--field {
+  float: left;
+  border-radius: 20px;
+  background-color: #cce2f7;
+  border-color: transparent;
+  height: 40px;
+  width: 70%;
+}
+.c-button {
+  border-radius: 20px;
+  margin-left: 10px;
+  background-color: #cce2f7;
+  border-color: transparent;
+  width: 26%;
+  height: 40px;
+}
