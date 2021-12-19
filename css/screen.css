@@ -9,7 +9,7 @@ html {
 .c-body--title {
   margin-top: 20px;
   margin-bottom: 30px;
-  margin-left: 20px;
+  margin-left: 42px;
   color: black;
 }
 .c-input {
@@ -44,6 +44,7 @@ html {
   margin: 0 0 0 0;
   float: left;
 }
+
 .c-label--value {
   margin: 0 0 0 0;
   text-align: right;
