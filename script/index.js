@@ -18,11 +18,7 @@ const init = function () {
       ],
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
+      scales: {},
     },
   });
   //   get_data(stock_name);

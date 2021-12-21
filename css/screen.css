@@ -1,10 +1,25 @@
 html {
   background-color: #e3edf593;
 }
+:root {
+  --global-baseline: calc(1rem / 2);
+  --global-whitespace-lg: calc(var(--global-baseline) * 2);
+}
+.c-body {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.c-card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.356);
+  border-radius: 10px;
+  padding: var(--global-whitespace-lg);
+  height: 80%;
+}
+
 .c-chart {
   width: 100%;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 .c-body--title {
   margin-top: 20px;
@@ -26,10 +41,10 @@ html {
 }
 .c-button {
   border-radius: 20px;
-  margin-left: 10px;
+  margin-left: 2%;
   background-color: #e3edf5;
   border-color: transparent;
-  width: 26%;
+  width: 28%;
   height: 40px;
 }
 .c-content {
