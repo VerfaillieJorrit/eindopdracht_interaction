@@ -24,8 +24,14 @@ const init = function () {
   });
 
   const button = document.querySelector('.js-sumbit');
+  const button2 = document.querySelector('.js-slider');
 
   button.addEventListener('click', click);
+  button2.addEventListener('click', dark);
+};
+const dark = function () {
+  var element = document.body;
+  element.classList.toggle('dark-mode');
 };
 const goback = function () {
   const button = document.querySelector('.js-sumbit');
