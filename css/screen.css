@@ -5,6 +5,9 @@ html {
   --global-baseline: calc(1rem / 2);
   --global-whitespace-lg: calc(var(--global-baseline) * 2);
 }
+.body {
+  font-family: 'Inter', sans-serif;
+}
 .c-body {
   padding-left: 10px;
   padding-right: 10px;
@@ -21,10 +24,11 @@ html {
   padding-right: 5%;
   padding-left: 5%;
 }
+
 .c-body--title {
   margin-top: 20px;
   margin-bottom: 30px;
-  margin-left: 42px;
+  text-align: center;
   color: black;
 }
 .c-input {
@@ -39,6 +43,25 @@ html {
   height: 40px;
   width: 70%;
 }
+.c-input--interval {
+  border-radius: 20px;
+  background-color: #e3edf5;
+  border-color: transparent;
+  height: 28px;
+  width: 100%;
+}
+
+.c-input--label {
+  font-size: 18px;
+}
+.c-interval {
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-right: 20px;
+  display: block;
+  margin-bottom: 0px;
+}
+
 .c-button {
   border-radius: 20px;
   margin-left: 2%;
@@ -63,4 +86,15 @@ html {
 .c-label--value {
   margin: 0 0 0 0;
   text-align: right;
+}
+
+@media (min-width: 768px) {
+  .c-max--chart {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .c-max--chart {
+    height: 200px;
+  }
 }

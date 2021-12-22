@@ -11,6 +11,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   </head>
 
   <body style="margin: 0px">
@@ -19,10 +22,17 @@
       <div class="c-card">
         <div class="c-body--content">
           <div class="c-input">
-            <input class="c-input--field js-input" type="text" />
+            <input class="c-input--field js-input" required type="text" />
             <button class="c-button js-sumbit">sumbit</button>
           </div>
-          <canvas id="myChart" height="400" class="c-chart"></canvas>
+          <div class="c-max--chart">
+            <canvas id="myChart" class="c-chart"></canvas>
+          </div>
+          <div class="c-interval">
+            <label for="interval" class="c-input--label">set interval : 1m 5m 15m 1d 1wk 1mo </label>
+            <input id="interval" class="c-input--interval js-interval" value="1d" type="text" required />
+          </div>
+
           <div class="c-content js-content"></div>
         </div>
       </div>

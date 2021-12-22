@@ -19,9 +19,10 @@ const init = function () {
     },
     options: {
       scales: {},
+      maintainAspectRatio: false,
     },
   });
-  //   get_data(stock_name);
+
   const button = document.querySelector('.c-button');
 
   button.addEventListener('click', click);
@@ -29,8 +30,9 @@ const init = function () {
 
 const click = function () {
   const stock_name = document.querySelector('.js-input').value;
+  const interval = document.querySelector('.js-interval').value;
   get_data(stock_name);
-  get_history(stock_name);
+  get_history(stock_name, interval);
 };
 
 const show_data = function (jsonObject) {
@@ -86,8 +88,9 @@ const get_data = function (stock_name) {
   handleData(`https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=${stock_name}`, show_data);
 };
 
-const get_history = function (stock_name) {
-  handleData(`https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=${stock_name}`, show_history);
+const get_history = function (stock_name, interval) {
+  handleData(`https://yfapi.net/v8/finance/spark?interval=${interval}&range=1mo&symbols=${stock_name}`, show_history);
+  console.log(`https://yfapi.net/v8/finance/spark?interval=${interval}&range=1mo&symbols=${stock_name}`);
 };
 
 document.addEventListener('DOMContentLoaded', init);
