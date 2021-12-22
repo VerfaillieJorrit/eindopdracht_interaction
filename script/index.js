@@ -23,16 +23,23 @@ const init = function () {
     },
   });
 
-  const button = document.querySelector('.c-button');
+  const button = document.querySelector('.js-sumbit');
 
   button.addEventListener('click', click);
+};
+const goback = function () {
+  const button = document.querySelector('.js-sumbit');
+  button.innerHTML = 'sumbit';
 };
 
 const click = function () {
   const stock_name = document.querySelector('.js-input').value;
   const interval = document.querySelector('.js-interval').value;
+  const button = document.querySelector('.js-sumbit');
+  button.innerHTML = 'loading...';
   get_data(stock_name);
   get_history(stock_name, interval);
+  setTimeout(goback, 3000);
 };
 
 const show_data = function (jsonObject) {

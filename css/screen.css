@@ -17,6 +17,17 @@ html {
   border-radius: 10px;
   padding: var(--global-whitespace-lg);
   height: 80%;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .c-card {
+    width: 600px;
+  }
+}
+@media (min-width: 992px) {
+  .c-card {
+    width: 700px;
+  }
 }
 
 .c-chart {
